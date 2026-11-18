@@ -1,0 +1,19 @@
+{
+  "name": "ezbizhq-site",
+  "private": true,
+  "description": "EzBiz early access waitlist page for ezbizhq.com. Static files; the dev dependencies are only for local checks.",
+  "type": "module",
+  "scripts": {
+    "serve": "node scripts/serve.mjs",
+    "brand-check": "node scripts/brand-check.mjs",
+    "test": "node scripts/test-form.mjs",
+    "og": "node scripts/make-og.mjs",
+    "screenshots": "node scripts/screenshots.mjs",
+    "lighthouse": "node scripts/lighthouse.mjs",
+    "check": "node scripts/brand-check.mjs && node scripts/test-form.mjs"
+  },
+  "devDependencies": {
+    "lighthouse": "^12.0.0",
+    "playwright": "^1.48.0"
+  }
+}

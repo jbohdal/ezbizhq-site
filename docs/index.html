@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EzBiz, contractor software built by a fence contractor</title>
+  <meta name="description" content="Quote it, send it, get it signed, get it built, get paid. One app. Early access is opening soon.">
+  <link rel="canonical" href="https://ezbizhq.com/">
+  <meta name="theme-color" content="#2B1B4D">
+  <meta name="color-scheme" content="light">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EzBiz">
+  <meta property="og:url" content="https://ezbizhq.com/">
+  <meta property="og:title" content="Contractor software built by a fence contractor.">
+  <meta property="og:description" content="Quote it, send it, get it signed, get it built, get paid. One app. Early access is opening soon.">
+  <meta property="og:image" content="https://ezbizhq.com/assets/img/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="EzBiz logo with the line Contractor software built by a fence contractor.">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contractor software built by a fence contractor.">
+  <meta name="twitter:description" content="Quote it, send it, get it signed, get it built, get paid. One app. Early access is opening soon.">
+  <meta name="twitter:image" content="https://ezbizhq.com/assets/img/og-image.png">
+  <meta name="twitter:image:alt" content="EzBiz logo with the line Contractor software built by a fence contractor.">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/app-icon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/assets/img/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon-180.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preload" href="/assets/fonts/rubik-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/rubik-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script src="/assets/js/waitlist.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#signup">Skip to the signup form</a>
+
+  <header class="site-header">
+    <a href="/" class="brand" aria-label="EzBiz home">
+      <img src="/assets/img/ezbiz-logo-light.svg" alt="EzBiz" width="501" height="112">
+    </a>
+  </header>
+
+  <main class="page">
+    <section class="hero" aria-labelledby="headline">
+      <p class="badge">Early access</p>
+      <h1 id="headline">Contractor software built by a <span class="hl">fence contractor.</span></h1>
+      <p class="sub">Quote it, send it, get it signed, get it built, get paid. One app. Early access is opening soon.</p>
+
+      <ul class="points">
+        <li>
+          <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#2B1B4D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span>Good, Better, Best options on every quote, priced from what material costs you today.</span>
+        </li>
+        <li>
+          <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#2B1B4D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span>Customers open the proposal on their phone, pick an option and sign.</span>
+        </li>
+        <li>
+          <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#2B1B4D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span>Your salesman sees the price. Your crew sees the pull sheet. Nobody sees your margins but you.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="signup" aria-labelledby="signup-title">
+      <h2 id="signup-title" class="card-title">Get early access</h2>
+
+      <form id="waitlist" class="form" novalidate>
+        <div class="field">
+          <label for="email">Email <span class="req">(required)</span></label>
+          <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required maxlength="254" aria-describedby="email-error">
+          <p class="field-error" id="email-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" maxlength="120">
+        </div>
+
+        <div class="field">
+          <label for="company">Company</label>
+          <input id="company" name="company" type="text" autocomplete="organization" maxlength="160">
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="trade">Trade</label>
+            <select id="trade" name="trade">
+              <option value="Fence" selected>Fence</option>
+              <option value="Decking">Decking</option>
+              <option value="Pavers and hardscape">Pavers and hardscape</option>
+              <option value="Screen enclosures">Screen enclosures</option>
+              <option value="Gutters">Gutters</option>
+              <option value="Roofing">Roofing</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="team_size">Team size</label>
+            <select id="team_size" name="team_size">
+              <option value="" selected>Choose one</option>
+              <option value="Just me">Just me</option>
+              <option value="2 to 5">2 to 5</option>
+              <option value="6 to 15">6 to 15</option>
+              <option value="16 or more">16 or more</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="state">State</label>
+          <select id="state" name="state" autocomplete="address-level1">
+            <option value="" selected>Choose your state</option>
+            <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option>
+            <option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option>
+            <option>District of Columbia</option><option>Florida</option><option>Georgia</option><option>Hawaii</option>
+            <option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option>
+            <option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option>
+            <option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option>
+            <option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option>
+            <option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option>
+            <option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option>
+            <option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option>
+            <option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option>
+            <option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option>
+            <option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option>
+            <option>Puerto Rico</option><option>Outside the US</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="current_software">What do you use now <span class="opt">(optional)</span></label>
+          <input id="current_software" name="current_software" type="text" maxlength="200" placeholder="Paper, spreadsheets, another app">
+        </div>
+
+        <input type="hidden" name="utm_source" id="utm_source">
+        <input type="hidden" name="utm_medium" id="utm_medium">
+        <input type="hidden" name="utm_campaign" id="utm_campaign">
+        <input type="hidden" name="utm_content" id="utm_content">
+        <input type="hidden" name="referrer" id="referrer">
+
+        <div class="hp" aria-hidden="true">
+          <label for="website">Leave this field empty</label>
+          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button type="submit" class="btn" id="submit">Get early access</button>
+        <p class="fine">No spam. We'll email you when your spot opens.</p>
+        <div class="form-error" id="form-error" role="alert" hidden></div>
+      </form>
+
+      <div class="thanks" id="thanks" tabindex="-1" hidden>
+        <img src="/assets/img/ezbiz-mark-light.svg" alt="" width="64" height="64">
+        <p class="thanks-text">You're on the list. We'll reach out before early access opens.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      <span class="foot-brand">EzBiz</span>
+      <a href="mailto:support@ezbizhq.com">support@ezbizhq.com</a>
+      <a href="/privacy.html">Privacy</a>
+      <span>&copy; <span class="year">2026</span> EzBiz</span>
+    </p>
+  </footer>
+</body>
+</html>

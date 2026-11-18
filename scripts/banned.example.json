@@ -1,0 +1,7 @@
+{
+  "_readme": "Copy this file to scripts/banned.local.json (git ignored) and replace the placeholders with the real private terms. Each term matches case insensitively with any spacing. The brand gate refuses to run while this file is missing or still has placeholders.",
+  "groups": {
+    "owner or old company name": ["PLACEHOLDER owner last name", "PLACEHOLDER old company name", "PLACEHOLDER old company short name"],
+    "hosting or build detail": ["PLACEHOLDER hosting provider", "PLACEHOLDER database", "PLACEHOLDER framework"]
+  }
+}

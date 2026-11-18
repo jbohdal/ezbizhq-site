@@ -1,0 +1,12 @@
+{
+  "name": "EzBiz",
+  "short_name": "EzBiz",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#FFF8E7",
+  "theme_color": "#2B1B4D",
+  "icons": [
+    { "src": "/assets/img/app-icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/img/app-icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
