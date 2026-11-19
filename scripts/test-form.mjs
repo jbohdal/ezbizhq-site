@@ -40,8 +40,12 @@ try {
     await page.goto(srv.siteUrl + "/", { waitUntil: "networkidle" });
     assert.deepEqual(foreign, []);
     assert.deepEqual(errors, []);
-    assert.equal(await page.locator("#trade").inputValue(), "Fence");
-    assert.equal(await page.locator("#trade option").first().textContent(), "Fence");
+    // Trade has no default: the placeholder is selected, then the trades in the agreed order.
+    assert.equal(await page.locator("#trade").inputValue(), "");
+    assert.equal(await page.locator("#trade").getAttribute("required"), null);
+    assert.deepEqual(await page.locator("#trade option").allTextContents(),
+      ["Choose one", "Fence", "Decking", "Pavers and hardscape", "Screen enclosures", "Gutters", "Roofing", "Other"]);
+    assert.equal(await page.locator("#trade option[selected]").getAttribute("value"), "");
     assert.equal(await page.evaluate(() => document.fonts.check("800 20px Rubik")), true);
     await ctx.close();
   });
@@ -77,6 +81,7 @@ try {
     await page.fill("#email", "  Test.User@Example.com ");
     await page.fill("#name", "Test User");
     await page.fill("#company", "Test Fence Co");
+    await page.selectOption("#trade", "Fence");
     await page.selectOption("#team_size", "2 to 5");
     await page.selectOption("#state", "Florida");
     await page.fill("#current_software", "Spreadsheets");

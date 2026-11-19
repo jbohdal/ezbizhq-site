@@ -60,6 +60,7 @@ const BASE_RULES = [
       .map((m) => m[0]) },
   { name: "hyphen or dash", test: (t) => t.match(/[-‐‑‒–—―−﹘﹣－]/g) },
   { name: "price", test: (t) => t.match(/\$|\/\s*mo\b|per\s+month|a\s+month|\/\s*yr\b|per\s+year|\bUSD\b|free\s+trial/gi) },
+  { name: "trade named in the pitch (fence contractor)", test: (t) => t.match(/fence\s*contractors?/gi) },
   { name: "old (best price) label", test: (t) => t.match(/\(\s*best\s+price\s*\)/gi) },
   { name: "testimonial or stats wording", test: (t) => t.match(
       /testimonial|trusted\s+by|loved\s+by|\d+\s*%|\d[\d,]*\s*\+|\d+\s*(x|times)\s+(faster|more)|thousands\s+of|hundreds\s+of|\d[\d,]*\s+(contractors|companies|customers|users)|five\s+star|\d(\.\d)?\s+stars?\b|★|rated\s+\d|\d[\d,.]*\s+reviews?\b|(customer|google|5|five)\s+reviews?|customers\s+say/gi) },
@@ -129,10 +130,10 @@ if (process.argv.includes("--selftest")) {
     "hosting or build detail": ["ExampleCloud", "FooDB"],
   });
   const bad = extractHtml(`<html><head><title>EZ Biz \u2013 the best</title><meta name="description" content="Only $49/mo, per month"></head>
-    <body><p>Ez Biz is great - trusted by 500+ contractors. ACME widget  co, zorblatt. Runs on ExampleCloud. Fence (best price). 4.9 stars, 98% happy, 120 reviews.</p></body></html>`);
+    <body><p>Ez Biz is great - trusted by 500+ contractors. ACME widget  co, zorblatt. Runs on ExampleCloud. Fence (best price). Built by a Fence  Contractor. 4.9 stars, 98% happy, 120 reviews.</p></body></html>`);
   const probs = check(bad, rules);
   const rulesHit = new Set(probs.map((p) => p.rule));
-  const want = ["brand name must be exactly EzBiz", "hyphen or dash", "price", "owner or old company name", "hosting or build detail", "old (best price) label", "testimonial or stats wording"];
+  const want = ["brand name must be exactly EzBiz", "hyphen or dash", "price", "owner or old company name", "hosting or build detail", "old (best price) label", "trade named in the pitch (fence contractor)", "testimonial or stats wording"];
   const missing = want.filter((w) => !rulesHit.has(w));
   const good = check(extractHtml(`<html><head><title>EzBiz</title></head><body><a href="mailto:support@ezbizhq.com">support@ezbizhq.com</a> EzBiz 2 to 5</body></html>`), rules);
   if (missing.length || good.length) {

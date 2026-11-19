@@ -26,7 +26,7 @@ h1{position:absolute;left:80px;top:268px;width:720px;font-weight:800;font-size:6
 </style></head><body>
 <img class="logo" src="${logo}" alt="">
 <div class="pill">Early access</div>
-<h1>Contractor software built by a fence contractor.</h1>
+<h1>Contractor software built by a contractor.</h1>
 <div class="url">ezbizhq.com</div>
 <div class="mark">${mark}</div>
 </body></html>`;
