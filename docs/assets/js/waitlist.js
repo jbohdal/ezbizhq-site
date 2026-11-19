@@ -3,7 +3,7 @@
   "use strict";
 
   // ===== CONFIG: paste the Google Apps Script web app URL between the quotes (it ends in /exec) =====
-  var WAITLIST_ENDPOINT = "";
+  var WAITLIST_ENDPOINT = "https://script.google.com/macros/s/AKfycbyCgU5cNpTu90sXbNaHvoNzI1ZAeOZHDqibNBDq3Qn2Yh9PaRuc94SzwE0ekGcEqxTV7Q/exec";
   // ================================================================================================
 
   var UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content"];
