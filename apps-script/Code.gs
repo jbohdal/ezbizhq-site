@@ -1,16 +1,18 @@
 /**
- * @OnlyCurrentDoc
- *
  * EzBiz early access waitlist: Google Apps Script web app.
  *
- * Paste this whole file into the Apps Script editor of the Google Sheet named "EzBiz Waitlist"
- * (Extensions > Apps Script), then deploy it as a web app:
- *   Execute as: Me    Who has access: Anyone
+ * The live script is a standalone Apps Script project in jonathan@ezbizhq.com (not bound to a sheet),
+ * deployed as a web app (Execute as: Me, Who has access: Anyone). It opens the spreadsheet
+ * "EzBiz Waitlist" by its id (SPREADSHEET_ID below): getActiveSpreadsheet() is null in a standalone
+ * project, which is why every signup before Nov 19 2026 failed.
  *
  * The page at ezbizhq.com POSTs the form as application/x-www-form-urlencoded.
  * Each valid signup becomes one row on the tab named "EzBiz Waitlist".
- * No email is sent. Nothing else is read or written. @OnlyCurrentDoc limits the script to this one sheet.
+ * No email is sent. Nothing else is read or written.
  */
+
+// The spreadsheet "EzBiz Waitlist", owned by jonathan@ezbizhq.com.
+var SPREADSHEET_ID = '1vzGtGieoQJ-eZVeeoKwis91mZ_y_DCquAzHBrREk8MQ';
 
 var SHEET_NAME = 'EzBiz Waitlist';
 
@@ -115,8 +117,16 @@ function guardFormula_(value) {
 }
 
 function getSheet_() {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var ss = SpreadsheetApp.openById(SPREADSHEET_ID);
   return ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
+}
+
+// Manual use only (run it from the Apps Script editor): logs which spreadsheet and tab the web app writes to,
+// and how many rows the tab has. Writes nothing.
+function checkSheet() {
+  var ss = SpreadsheetApp.openById(SPREADSHEET_ID);
+  var sheet = ss.getSheetByName(SHEET_NAME);
+  Logger.log('Spreadsheet: ' + ss.getName() + ' | tab "' + SHEET_NAME + '": ' + (sheet ? sheet.getLastRow() + ' rows' : 'missing'));
 }
 
 function json_(obj) {
