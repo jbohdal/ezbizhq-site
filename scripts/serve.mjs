@@ -7,7 +7,7 @@
 // tested here are the same code Jonathan deploys.
 //
 // --endpoint stub (default) rewrites the CONFIG line in waitlist.js to point at the stub, as if
-// the web app URL had been pasted in. --endpoint none serves the file untouched (empty config).
+// the web app URL had been pasted in. --endpoint none serves it with the config line blanked (as before the URL was set).
 // POST /__endpoint with a body of stub, none or a URL changes it while running (tests use this).
 // GET http://127.0.0.1:<port+1>/rows returns the stub sheet; POST /reset clears it.
 
@@ -115,8 +115,9 @@ export function startServers({ port = 4788, endpoint = "stub" } = {}) {
       return res.end(fs.readFileSync(path.join(SITE, "404.html")));
     }
     let data = fs.readFileSync(file);
-    if (p === "/assets/js/waitlist.js" && mode !== "none") {
-      const target = mode === "stub" ? stubUrl : mode;
+    if (p === "/assets/js/waitlist.js") {
+      // "none" blanks the config line, so the test sees the not-open-yet state even after the real URL is set.
+      const target = mode === "none" ? "" : mode === "stub" ? stubUrl : mode;
       const src = data.toString("utf8");
       const out = src.replace(/var WAITLIST_ENDPOINT = "[^"]*";/, `var WAITLIST_ENDPOINT = ${JSON.stringify(target)};`);
       if (out === src) throw new Error("CONFIG line not found in waitlist.js");
